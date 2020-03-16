@@ -7,9 +7,9 @@ const Home: {[prop: string]: any}  = {
     </div>)
   },
   methods: {
-    handlerTemplate: async (): Promise<any>  => {
+    async handlerTemplate  (): Promise<any> {
       const x = new Promise((resolve,reject) => {
-        resolve(2)
+        resolve(1)
       })
       console.log(await x)
     }
