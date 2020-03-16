@@ -1,8 +1,10 @@
 
 import  {VueConstructor} from 'vue'
-const Home: VueConstructor  = {
+const Home: {[prop: string]: any}  = {
   render (h: any): JSX.Element  {  
-    return (<div on-click={(): void=> this.handlerTemplate()}>home</div>)
+    return (<div on-click={(): void=> this.handlerTemplate()}>
+      <el-button>123</el-button>
+    </div>)
   },
   methods: {
     handlerTemplate: async (): Promise<any>  => {
