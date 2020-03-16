@@ -1,0 +1,42 @@
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          'babel-loader',
+          "ts-loader",
+          {
+            loader: "eslint-loader",
+            options: {
+              formatter: require("eslint-friendly-formatter")
+            }
+          }
+        ],
+        include: [path.resolve(process.cwd(), "src")] // 指定检查的目录
+        /* options: {
+          // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
+          formatter: require("eslint-friendly-formatter") // 指定错误报告的格式规范
+        } */
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".js", ".ts",'.tsx'],
+    alias: {
+      "@": path.resolve(process.cwd(), "src"),
+      vue$: "vue/dist/vue.esm.js"
+    }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Output Management",
+      template: path.resolve(process.cwd(), "index.html")
+    })
+  ]
+};
