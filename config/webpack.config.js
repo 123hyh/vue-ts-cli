@@ -68,7 +68,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Output Management",
-      template: path.resolve(process.cwd(), "index.html")
+      template: path.resolve(process.cwd(), "public/index.html")
     })
   ]
 };
