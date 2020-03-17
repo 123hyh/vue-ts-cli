@@ -1,12 +1,21 @@
-import  vue, {ComponentOptions,CreateElement, VueConstructor} from 'vue'
-export const Test: VueConstructor<any> = vue.extend({
+import  vue from 'vue'
+import '@/styles/index.less'
+export const Test = vue.extend({ 
   render(h: any): any{
-    return(<div onClick={this.handlerClick}>{this.name}</div>)
+    return(<div class='active' onClick={this.handlerClick}>{this.name}</div>)
   },
   methods:{
     handlerClick(e: MouseEvent): void{
-      e.stopPropagation()
-      console.log(2)
+      e.stopPropagation();
+      this.$emit('handlerClick')
+    }
+  }, 
+  data(){
+    return { x: 1 }
+  },
+  computed:{
+    calc(): number {
+      return 1
     }
   },
   props:{

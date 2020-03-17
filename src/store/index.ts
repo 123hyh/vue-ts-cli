@@ -1,9 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex';
+import Vue from 'vue';
+import Vuex, {Store} from 'vuex';
+Vue.use(Vuex); 
 
-Vue.use(Vuex);
-
-export const store = new Vuex.Store({
+export const store: Store< {test: { name: string } } > = new Vuex.Store({
   state: {
     test: {
       name: '黄'

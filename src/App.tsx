@@ -1,5 +1,6 @@
-export const App: { [prop: string]: any} = {
+import vue from 'vue'
+export const App = vue.extend({
   render(h: any){
     return (<router-view></router-view>)
   }
-}
+})

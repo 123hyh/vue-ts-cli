@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+  externals: {},
   module: {
     rules: [
       {
@@ -32,6 +33,25 @@ module.exports = {
           {
             loader: 'css-loader'
           },
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test: /.less$/,
+        use: [ 
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
           {
             loader: 'less-loader',
             options: {
@@ -39,7 +59,7 @@ module.exports = {
               noIeCompat: true,
             },
           }
-        ]
+        ],
       },
       // 图片
       {
