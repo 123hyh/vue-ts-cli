@@ -5,6 +5,7 @@ import { store } from '@/store'
 import { router } from '@/router'
 import { App } from '@/App'
 import { directives } from '@/directives'
+
 Vue.use(ElementUi)
 Vue.use(directives)
 

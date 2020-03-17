@@ -1,7 +1,7 @@
 import  vue from 'vue'
 import '@/styles/index.less'
 export const Test = vue.extend({ 
-  render(h: any): any{
+  render(h: any): JSX.Element{
     return(<div class='active' onClick={this.handlerClick}>{this.name}</div>)
   },
   methods:{
