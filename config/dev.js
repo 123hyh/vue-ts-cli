@@ -21,6 +21,16 @@ const devConfig = {
       warnings: false
     }
   },
+  module:{
+    rules:[
+      {
+        test: /.html$/,
+        use: {
+          loader: 'html-loader'
+        }
+      }
+    ]
+  },
   plugins: [
     // 清空命令行信息
     new FriendlyErrorsWebpackPlugin({

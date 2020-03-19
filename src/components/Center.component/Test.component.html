@@ -1,0 +1,7 @@
+<div class='active' @click.stop='handlerClick'>
+    <ul>
+        <li @click='handlerClick' 
+            v-for='item in [1,2,3,4]'
+        >{{name}}</li>
+    </ul>
+</div>

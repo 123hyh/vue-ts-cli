@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      color: #3c3c3c;
+    }
+
+    .directory {
+      color: #fff;
+      background: #000000;
+      font-size: 25px;
+    }
+
+    .directory-help {
+      font-size: 1.2em;
+    }
+
+    .directory-help details {
+      text-indent: 2em;
+    }
+
+    .directory-help details > summary > code:first-child {
+      color: #ff5a5a;
+    }
+    .directory-help details > summary > code:last-child {
+      color: #5c5757;
+    }
+
+    .red {
+      color: #ff5a5a;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li>
+        <h1>组件规范化</h1>
+        <dl>
+          <dt>1、组件命名：</dt>
+          <dd>
+            <details>
+              <summary>目录结构规范</summary>
+              <pre class="directory">
+                        <code>|- components</code>
+                        <code>| |- User.component</code>
+                        <code>|  |- User.component.html</code>
+                        <code>|  |- User.component.ts</code>
+                        <code>|  |- User.component.(less | scss)</code>
+                        </pre>
+            </details>
+          </dd>
+          <br>
+          <dt>2、创建组件:</dt>
+          <dd>
+            <details>
+              <summary>使用 vue.extend 方法 保证正常使用ts的提示功能</summary>
+              <pre class="directory">
+                    <code>
+                    vue.extend({
+                        data: () =>({}),
+                        <code class="red">template: require('./User.html'),</code> 
+                        methods: {},
+                        props: {},
+                        computed: {}
+                    })
+                    </code>
+                    <strong class="red">template 必须使用 require函数导入html模板；</strong>
+                    <strong class="red">或者使用 tsx脚本的render方法创建模板（ 建议使用html模板 ）</strong>
+                    </pre>
+            </details>
+          </dd>
+
+        </dl>
+      </li>
+      <li>
+        <dt>
+          <h1>目录说明</h1>
+        </dt>
+        <dd>
+          <details class="directory-help">
+            <summary>src</summary>
+            <details>
+              <summary>
+                <code>assets</code>
+                <code> 静态资源</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>components </code>
+                <code>组件</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>directives</code>
+                <code> 自定义指令</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>router</code>
+                <code> 路由配置</code>
+              </summary>
+              <details style="text-indent: 4em;">
+                <summary>
+                  <code>hooks.ts</code>
+                  <code> 路由钩子</code>
+                </summary>
+              </details>
+              <details style="text-indent: 4em;">
+                <summary>
+                  <code>index.ts</code>
+                  <code> 路由实例</code>
+                </summary>
+              </details>
+              <details style="text-indent: 4em;">
+                <summary>
+                  <code>permissions.ts</code>
+                  <code> 路由权限</code>
+                </summary>
+              </details>
+            </details>
+            <details>
+              <summary>
+                <code>store</code>
+                <code> 状态仓库</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>styles</code>
+                <code> 基础样式</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>utils</code>
+                <code> 工具函数</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>view</code>
+                <code> 视图</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>App.tsx</code>
+                <code> 视图出口</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>index.tsx</code>
+                <code> 入口</code>
+              </summary>
+            </details>
+            <details>
+              <summary>
+                <code>global.d.ts</code>
+                <code> 全局类型定义</code>
+              </summary>
+            </details>
+          </details>
+        </dd>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

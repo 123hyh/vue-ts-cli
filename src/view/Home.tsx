@@ -1,10 +1,7 @@
 
 import  vue from 'vue'
-import{ Test } from '@/components/Test'
+import{ Test } from '@/components/Center.component/Test.component'
 const Home = vue.extend({
-  components:{
-    Test
-  },
   render (h: any): JSX.Element  {  
     return (<div  on-click={(): Promise<any> => this.handlerTemplate()}>
       <el-button>123</el-button>

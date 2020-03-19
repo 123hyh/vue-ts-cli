@@ -1,11 +1,6 @@
 import vue from 'vue'
 const User = vue.extend({
-
-  render(h){
-    // 测试指令
-    return (<el-input  v-model={this.x} v-foucs/>)
-  },
-
+  template: require('./User.html'),
   directives:{
     foucs(el: any): void{
       const input: HTMLElement = [...el.children].find((item: HTMLElement) => item.nodeName === 'INPUT')
@@ -19,7 +14,7 @@ const User = vue.extend({
 
   data(){
     return {
-      x: '黄'
+      name: '黄'
     }
   }
 })
