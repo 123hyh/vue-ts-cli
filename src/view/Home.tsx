@@ -1,6 +1,8 @@
 
 import  vue from 'vue'
 import{ Test } from '@/components/Center.component/Test.component'
+import {UserInstance} from '@/service/'
+console.log(UserInstance.getUserInfo())
 const Home = vue.extend({
   render (h: any): JSX.Element  {  
     return (<div  on-click={(): Promise<any> => this.handlerTemplate()}>
