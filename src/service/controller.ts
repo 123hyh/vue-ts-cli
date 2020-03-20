@@ -1,6 +1,9 @@
 export class Controller{
-  public path: string
-  constructor(){
-    this.path = ''
+  public prefix: string
+  constructor(prefix = ''){
+    this.prefix = prefix;
+  }
+  public handlerOutput(): any {
+    return 1
   }
 }  

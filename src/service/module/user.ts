@@ -1,25 +1,25 @@
-import {Controller} from '../Controller'
+import { Controller } from '../Controller'
 /**
  * 
  * @param path 注入 path
  */
-function Path< T extends Function >(path: string): any{
+function Path< T extends {[prop: string]: any}>(path: string): any{
   console.log(path)
-  return (target: T): void => {
-    debugger
+  return (target: T, propertyKey: string, descriptor: PropertyDecorator): any => {
     if(target.prototype){
       target.prototype.path = path
-    }else{
+    }else {
+      debugger
+      // target[propertyKey] =
     }
   }
 }
 
 @Path('/user')
 class User extends Controller{
-
   @Path('/userInfo')
-  getUserInfo(): void{
-    console.log(this)
+  getUserInfo(): any{
+    return 1 
   }
 }
 export const UserInstance = new User
