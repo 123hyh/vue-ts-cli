@@ -1,25 +1,10 @@
-import { Controller } from '../Controller'
-/**
- * 
- * @param path 注入 path
- */
-function Path< T extends {[prop: string]: any}>(path: string): any{
-  console.log(path)
-  return (target: T, propertyKey: string, descriptor: PropertyDecorator): any => {
-    if(target.prototype){
-      target.prototype.path = path
-    }else {
-      debugger
-      // target[propertyKey] =
-    }
-  }
-}
-
+import { Controller, TResponse, Post, Path } from '../Controller';
 @Path('/user')
-class User extends Controller{
+class User extends Controller {
+  @Post({ responseType: 'blob' })
   @Path('/userInfo')
-  getUserInfo(): any{
-    return 1 
+  getUserInfo<T extends {}>(data: T): any {
+    return data;
   }
 }
-export const UserInstance = new User
+export const UserInstance = new User();
