@@ -1,13 +1,12 @@
-import vue from 'vue';
-import { Test } from '@/components/Center.component/Test.component';
-import { UserInstance } from '@/service/';
-import { TResponse } from '@/service/Controller';
-console.log();
+import vue from "vue";
+import { Test } from "@/components/Center.component/Test.component";
+import { UserInstance } from "@/service/";
+import { strongbox } from "utils";
+import { TResponse, Path } from "@/service/Controller";
 const Home = vue.extend({
   async mounted(): Promise<any> {
-    const data: TResponse = await UserInstance.getUserInfo<{ name: string }>({
-      name: '黄'
-    });
+    const d = await strongbox(() => UserInstance.getExchangerate());
+    debugger;
   },
   render(h: any): JSX.Element {
     return (
@@ -24,7 +23,7 @@ const Home = vue.extend({
     async handlerTemplate(): Promise<any> {
       const x = new Promise((resolve, reject) => {
         resolve(1);
-        this.$router.push('/user');
+        this.$router.push("/user");
       });
       console.log(await x);
     }
