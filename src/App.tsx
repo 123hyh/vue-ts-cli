@@ -1,8 +1,9 @@
-import vue from 'vue'
+import vue from "vue";
 export const App = vue.extend({
+  name: "App",
   render: (h: any) => (
-    <keep-alive> 
+    <keep-alive>
       <router-view></router-view>
     </keep-alive>
   )
-})
+});

@@ -12,10 +12,13 @@ module.exports = {
           "babel-loader",
           "ts-loader",
           {
-            loader: "eslint-loader",
-            options: {
+            loader: path.resolve(__dirname, "./loaders/hot.js")
+          },
+          {
+            loader: "eslint-loader"
+            /*  options: {
               formatter: require("eslint-friendly-formatter")
-            }
+            } */
           }
         ],
         include: [path.resolve(process.cwd(), "src")] // 指定检查的目录

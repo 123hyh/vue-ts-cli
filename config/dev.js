@@ -15,6 +15,7 @@ const devConfig = {
   devServer: {
     contentBase: path.resolve(process.cwd(), "dist"),
     hot: true,
+    progress: true,
     quiet: true,
     overlay: {
       errors: true,

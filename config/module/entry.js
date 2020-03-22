@@ -1,3 +1,1 @@
-module.exports = {
-  index: "./src/index.tsx"
-};
+module.exports = { index: "./src/index.tsx" };

@@ -4,6 +4,7 @@ import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
 import { TResponse, Path } from "@/service/Controller";
 const Home = vue.extend({
+  name: "Home",
   async mounted(): Promise<any> {
     const d = await strongbox(() => UserInstance.getExchangerate());
     debugger;
