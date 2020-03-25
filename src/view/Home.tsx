@@ -7,7 +7,7 @@ const Home = vue.extend({
   name: "Home",
   async mounted(): Promise<any> {
     const d = await strongbox(() => UserInstance.getExchangerate());
-    debugger;
+    const x = await UserInstance.goLogin({});
   },
   render(h: any): JSX.Element {
     return (

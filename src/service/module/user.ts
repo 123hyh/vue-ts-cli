@@ -1,5 +1,6 @@
 import { Controller, TResponse, POST, Path } from "../Controller";
-// @Path("/user")
+
+@Path("/user")
 class User extends Controller {
   @POST({ responseType: "blob" })
   @Path("/userInfo")
@@ -12,5 +13,18 @@ class User extends Controller {
   getExchangerate(): any {
     return { pageIndex: 1, pageSize: 10, source: "system" };
   }
+
+  @POST()
+  @Path("/login")
+  goLogin<T>(data: T): T {
+    return data;
+  }
+
+  @POST()
+  @Path("/logout")
+  goLogout(): any {
+    return {};
+  }
 }
+
 export const UserInstance = new User();

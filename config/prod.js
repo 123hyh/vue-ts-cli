@@ -1,16 +1,14 @@
 const merge = require("webpack-merge");
-
+const webpack = require("webpack");
+const env = require("./env/env.prod");
 const entry = require("./module/entry");
 const output = require("./module/output");
-
-const config = require("./webpack.config");
-
+const config = require("./webpack.base");
 const PROD_CONFIG = {
   entry,
   output: output("production"),
   mode: "production",
-  plugins: [
-  ]
+  plugins: [new webpack.DefinePlugin(env)]
 };
-
+console.log();
 module.exports = merge(config, PROD_CONFIG);

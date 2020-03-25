@@ -1,7 +1,11 @@
 import axios from "axios";
 import { beforeRequest, afterResponse } from "./interceptors";
+
+// 区分（测试 | 生产）环境的 api；变量来自于 /config/env/evn.xxx.js
+const baseURL: string = process.env.baseUrl ?? "";
+
 const axiosInstance = axios.create({
-  baseURL: "/apis"
+  baseURL
 });
 // 添加请求拦截器
 axiosInstance.interceptors.request.use(beforeRequest, function(error) {

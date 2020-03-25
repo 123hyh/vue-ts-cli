@@ -1,4 +1,6 @@
 import vue from "vue";
+import { Test } from "@/components/Center.component/Test.component";
+
 const User = vue.extend({
   name: "User",
   template: require("./User.html"),
@@ -14,7 +16,9 @@ const User = vue.extend({
       }
     }
   },
-
+  components: {
+    TestComponent: Test()
+  },
   data() {
     return {
       name: "2"

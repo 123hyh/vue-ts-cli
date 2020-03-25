@@ -1,5 +1,5 @@
 const webpack = require("webpack");
-const config = require("./webpack.config");
+const config = require("./webpack.base");
 const merge = require("webpack-merge");
 const path = require("path");
 const entry = require("./module/entry");
@@ -29,17 +29,8 @@ const devConfig = {
       }
     }
   },
-  module: {
-    rules: [
-      {
-        test: /.html$/,
-        use: {
-          loader: "html-loader"
-        }
-      }
-    ]
-  },
   plugins: [
+    new webpack.DefinePlugin(require("./env/env.dev")),
     // 清空命令行信息
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
