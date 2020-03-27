@@ -4,7 +4,7 @@ import { beforeRefreshStoreEvent, afterRefreshStoreEvent } from "./resetStore";
 Vue.use(Vuex);
 
 import { user } from "@/store/module/user";
-export const store = new Vuex.Store({
+export const store: Store<any> = new Vuex.Store({
   modules: {
     user
   }

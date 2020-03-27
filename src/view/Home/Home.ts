@@ -2,8 +2,11 @@ import vue from "vue";
 import { Test } from "@/components/Center.component/Test.component";
 import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
-import { addRouter } from "@/router/permissions";
+import {mapGetters} from 'vuex'
 const Home = vue.extend({
+  computed:{
+    ...mapGetters(['isLogin'])
+  },
   data() {
     return { xx: 1 };
   },
@@ -21,7 +24,6 @@ const Home = vue.extend({
     },
     async handlerTemplate(): Promise<any> {
       const x = new Promise((resolve, reject) => {
-        addRouter()
         resolve(1);
         this.$router.push("/user");
       });

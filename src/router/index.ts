@@ -1,20 +1,21 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import { routerHooks } from "@/router/hooks";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import { routerHooks } from '@/router/hooks';
 Vue.use(VueRouter);
+type RouteComponent = Promise<any>;
 export const router = new VueRouter({
   routes: [
     {
-      path: "/",
-      component: (): any =>
-        import(/* webpackChunkName: "Home" */ "@/view/Home/Home")
+      path: '/',
+      component: (): RouteComponent =>
+        import(/* webpackChunkName: "Home" */ '@/view/Home/Home')
     },
     {
       path: '/login',
-      component: ()=> import(/* webpackChunkName: "Home" */'@/view/Login/Login')
+      component: (): RouteComponent =>
+        import(/* webpackChunkName: "Home" */ '@/view/Login/Login')
     }
   ]
 });
-
 // 注册路由钩子
 routerHooks(router);

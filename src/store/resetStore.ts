@@ -10,6 +10,6 @@ export function beforeRefreshStoreEvent(): void {
 // 页面刷新后重置 state
 export function afterRefreshStoreEvent(): void {
   let state: any = sessionStorage.getItem("store");
-  state = JSON.parse(state ?? "");
+  state = JSON.parse(state ?? `""`);
   state && store.replaceState(state);
 }
