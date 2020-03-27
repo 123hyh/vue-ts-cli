@@ -1,5 +1,5 @@
-import { StoreOptions, MutationPayload } from "vuex";
-import { addRouter } from "@/router/permissions";
+import { StoreOptions } from "vuex";
+import { addRouter } from "@/router";
 import { router } from "@/router";
 export const user: StoreOptions<{ token: string | number }> = {
   state: {

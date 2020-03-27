@@ -1,7 +1,6 @@
-import { router } from '@/router';
-import { RouteConfig } from 'vue-router';
+import VueRouter, { RouteConfig } from 'vue-router';
 
-const routes: RouteConfig[] = [
+export const ROUTES: RouteConfig[] = [
   {
     path: '/user',
     component: (): any =>
@@ -13,12 +12,5 @@ const routes: RouteConfig[] = [
       import(/* webpackChunkName: "NotFound" */ '@/view/NotFound/NotFound')
   }
 ];
-export const addRouter = (): any => {
-  return router.addRoutes(routes);
-};
 
-// 页面加载时判断 登录状态，是就动态添加 routes
-const isLogin = !!JSON.parse(
-  sessionStorage.getItem('store') ?? '{user:{token: 0}}'
-).user.token;
-isLogin && addRouter();
+
