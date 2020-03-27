@@ -6,12 +6,12 @@ export const router = new VueRouter({
   routes: [
     {
       path: "/",
-      component: (): any => import(/* webpackChunkName: "Home" */ "@/view/Home")
+      component: (): any =>
+        import(/* webpackChunkName: "Home" */ "@/view/Home/Home")
     },
     {
-      path: "/user",
-      component: (): any =>
-        import(/* webpackChunkName: "User" */ "@/view/User/User")
+      path: '/login',
+      component: ()=> import(/* webpackChunkName: "Home" */'@/view/Login/Login')
     }
   ]
 });

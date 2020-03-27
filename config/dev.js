@@ -15,8 +15,8 @@ const devConfig = {
   devServer: {
     contentBase: path.resolve(process.cwd(), "dist"),
     hot: true,
-    progress: true,
     quiet: true,
+    inline:true,
     overlay: {
       errors: true,
       warnings: false
@@ -40,7 +40,7 @@ const devConfig = {
       },
       clearConsole: true
     }),
-    new webpack.NamedModulesPlugin(),
+    // new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 };

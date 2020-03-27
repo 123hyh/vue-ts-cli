@@ -16,7 +16,6 @@
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
-    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
@@ -50,7 +49,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
-    "nprogress": "^0.2.0",
+    "qier-progress": "^1.0.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"

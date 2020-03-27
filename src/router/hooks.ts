@@ -1,15 +1,15 @@
-// 页面进度条
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+// 页面顶部进度条
+import QProgress from 'qier-progress'
+const progressBar = new QProgress
 import VueRouter from "vue-router";
 
 export function routerHooks(router: VueRouter): void {
   router.beforeEach((to, from, next) => {
-    NProgress.start();
+    progressBar.start();
     next();
   });
 
   router.afterEach(() => {
-    NProgress.done();
+    progressBar.finish();
   });
 }

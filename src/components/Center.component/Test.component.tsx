@@ -1,5 +1,6 @@
 import vue from "vue";
 import "./Test.component.less";
+
 export function Test<T extends { userName: string }>(): any {
   return vue.extend({
     name: "Test",

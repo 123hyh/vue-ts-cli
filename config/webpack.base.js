@@ -12,7 +12,10 @@ const conf = {
         test: /\.tsx?$/,
         use: [
           "babel-loader",
-          "ts-loader",
+          {
+            loader: "ts-loader",
+            options: { transpileOnly: true }
+          },
           {
             loader: path.resolve(__dirname, "./loaders/hot.js")
           },

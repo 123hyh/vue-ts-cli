@@ -2,20 +2,18 @@ import vue from "vue";
 import { Test } from "@/components/Center.component/Test.component";
 import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
-import { TResponse, Path } from "@/service/Controller";
+import { addRouter } from "@/router/permissions";
 const Home = vue.extend({
+  data() {
+    return { xx: 1 };
+  },
   name: "Home",
+  template: require("./Home.html"),
   async mounted(): Promise<any> {
     const d = await strongbox(() => UserInstance.getExchangerate());
-    const x = await UserInstance.goLogin({});
   },
-  render(h: any): JSX.Element {
-    return (
-      <div on-click={(): Promise<any> => this.handlerTemplate()}>
-        <el-button>123</el-button>
-        <Test name="huang" on-handlerClick={(): void => this.handlerClick()} />
-      </div>
-    );
+  components: {
+    Test: Test()
   },
   methods: {
     handlerClick(): void {
@@ -23,6 +21,7 @@ const Home = vue.extend({
     },
     async handlerTemplate(): Promise<any> {
       const x = new Promise((resolve, reject) => {
+        addRouter()
         resolve(1);
         this.$router.push("/user");
       });
@@ -30,4 +29,10 @@ const Home = vue.extend({
     }
   }
 });
+const m: any = module;
+
+if (m.hot) {
+  m.hot.accept();
+  console.log(`更新了···`);
+}
 export default Home;
