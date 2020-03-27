@@ -3,7 +3,9 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import { routerHooks } from '@/router/hooks';
 import { ROUTES } from './permissions';
 Vue.use(VueRouter);
+
 type RouteComponent = Promise<any>;
+
 export const router = new VueRouter({
   routes: [
     {
@@ -19,10 +21,12 @@ export const router = new VueRouter({
   ]
 });
 
-// 页面加载时判断 登录状态，是就动态添加 routes
+// 动态路由出口方法
 export function addRouter  (): any {
   router.addRoutes(ROUTES);
 };
+
+// 页面加载时判断 登录状态，是就动态添加 routes
 const isLogin = !!JSON.parse(
   sessionStorage.getItem('store') ?? '{user:{token: 0}}'
 ).user.token;
