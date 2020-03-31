@@ -4,20 +4,26 @@ import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
 import {mapGetters} from 'vuex'
 const Home = vue.extend({
+  
   computed:{
     ...mapGetters(['isLogin'])
   },
+
   data() {
     return { xx: 1 };
   },
+
   name: "Home",
+
   template: require("./Home.html"),
   async mounted(): Promise<any> {
     const d = await strongbox(() => UserInstance.getExchangerate());
   },
+
   components: {
     Test: Test()
   },
+
   methods: {
     handlerClick(): void {
       console.log(123);
@@ -31,6 +37,7 @@ const Home = vue.extend({
     }
   }
 });
+
 const m: any = module;
 
 if (m.hot) {
