@@ -16,7 +16,9 @@ template 必须使用 require函数导入html模板；
 或者使用 tsx脚本的render方法创建模板（ 建议使用html模板 ）
 例子：
     	Vue.extend({
-    	  data: () =>({}),
+    	  data: () =>({
+          test: 1
+        }),
     	  template: require('./User.componenthtml.html'), 
     	  methods: {},
     	  props: {},
