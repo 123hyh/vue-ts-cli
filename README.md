@@ -2,11 +2,11 @@
 
 ### 1.1、 目录结构：
 
-                        |- components
-                        |  |- User.component
-                        |  |- User.component.html
-                        |  |- User.component.ts
-                        |  |- User.component.scss
+    |- components
+    |  |- User.component
+    |  |- User.component.html
+    |  |- User.component.ts
+    |  |- User.component.scss
 
 ---
 
@@ -26,4 +26,4 @@ computed: {}
 
 ---
 
-# 2.目录结构
+# 2.项目目录
