@@ -1,17 +1,19 @@
 # 开始
 # 1. CLI 命令
-1. 开发环境：
+-  
+### 1.1 开发环境：
 
  `npm run  dev`
 
-1. 测试环境：
+- 
+### 1.2 测试环境：
 
  `npm run build:test`
-
-1. 测试环境（visual）
+- 
+### 1.3 测试环境（visual）
  - `npm run build:visual` 打包后可查看体积详情
-
-1. 生产环境：
+- 
+### 1.4 生产环境：
 
  - `npm run  build:prodution`
 
