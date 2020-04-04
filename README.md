@@ -1,22 +1,18 @@
 # 开始
 # 1. CLI 命令
--  
-### 1.1 开发环境：
+-   开发环境：
 
- `npm run  dev`
+	`npm run  dev`
 
-- 
-### 1.2 测试环境：
+-  测试环境：
 
- `npm run build:test`
-- 
-### 1.3 测试环境（visual）
- - `npm run build:visual` 打包后可查看体积详情
-- 
-### 1.4 生产环境：
+	`npm run build:test`
+-  测试环境（visual）
 
- - `npm run  build:prodution`
+	`npm run build:visual` 打包后可查看体积详情
+-  生产环境：
 
+	`npm run  build:prodution`
 
 
 -  如果您想设置  **测试环境和生产环境**    的 API 地址 可以通过环境变量文件做出修改  [config/env/env.prod.js][config/env/env.prod.js]；
