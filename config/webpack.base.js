@@ -7,7 +7,16 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 /* 压缩 */
 const CompressionPlugin = require("compression-webpack-plugin");
 /* Css基础loader */
-const CSS_BASE_LOADER = () => ["style-loader", "css-loader", "postcss-loader"];
+const CSS_BASE_LOADER_MIXIN = loader => {
+  const BASE = [
+    "style-loader",
+    "css-loader", 
+    "postcss-loader",
+  ];
+  return {
+    use: loader ? [...BASE, loader] : BASE
+  }
+};
 const conf = {
   externals: {},
   module: {
@@ -38,24 +47,11 @@ const conf = {
       },
       {
         test: /\.css$/,
-        use: CSS_BASE_LOADER(),
+        ...CSS_BASE_LOADER_MIXIN(),
       },
       {
         test: /\.scss$/,
-        use: [...CSS_BASE_LOADER(), "sass-loader"],
-      },
-      {
-        test: /\.less$/,
-        use: [
-          ...CSS_BASE_LOADER(),
-          {
-            loader: "less-loader",
-            options: {
-              strictMath: true,
-              noIeCompat: true,
-            },
-          },
-        ],
+        ...CSS_BASE_LOADER_MIXIN('sass-loader')
       },
       // 图片
       {

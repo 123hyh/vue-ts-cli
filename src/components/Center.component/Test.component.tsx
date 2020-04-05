@@ -1,5 +1,5 @@
 import vue from "vue";
-import "./Test.component.less";
+import "./Test.component.scss";
 
 export function Test<T extends { userName: string }>(): any {
   return vue.extend({
