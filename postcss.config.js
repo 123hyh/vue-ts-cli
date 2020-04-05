@@ -14,6 +14,7 @@ module.exports = {
         }
       }
     }),
+    /* 样式自动添加前缀 */
     autoprefixer
   ],
 };
