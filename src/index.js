@@ -10,6 +10,9 @@ import { directives } from "@/directives";
 Vue.use(ElementUi);
 Vue.use(directives);
 
+/* 全局样式 */
+import './styles/global.scss'
+/* ui 样式 */
 import "element-ui/lib/theme-chalk/index.css";
 
 

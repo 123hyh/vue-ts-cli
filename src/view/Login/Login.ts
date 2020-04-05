@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { mapActions } from "vuex";
-import './Login.less'
+import  './Login.scss'
 export default Vue.extend({
   template: require("./Login.html"),
   methods: {

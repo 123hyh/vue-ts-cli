@@ -1,0 +1,10 @@
+/* 布局方式 */
+@mixin dispaly($layout: flex) {
+  display: $layout;
+}
+/* flex 布局 */
+@mixin flex-layout($justifyContent: center, $alignItems: center) {
+  @include dispaly();
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}

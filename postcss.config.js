@@ -3,7 +3,14 @@ const autoprefixer = require("autoprefixer");
 module.exports = {
   plugins: [
     prefixSelector({
-      prefix: ".front-end-system",
+      prefix: "[data-front-end-system]",
+      transform(prefix, selector, prefixedSelector){
+        if (selector === 'html') {
+          return  `body${prefix}` ;
+        } else {
+          return prefixedSelector;
+        }
+      }
     }),
     autoprefixer
   ],

@@ -37,15 +37,15 @@ const conf = {
         } */
       },
       {
-        test: /.css$/,
-        use: CSS_BASE_LOADER,
+        test: /\.css$/,
+        use: CSS_BASE_LOADER(),
       },
       {
-        test: /\.s(a|c)ss$/,
+        test: /\.scss$/,
         use: [...CSS_BASE_LOADER(), "sass-loader"],
       },
       {
-        test: /.less$/,
+        test: /\.less$/,
         use: [
           ...CSS_BASE_LOADER(),
           {
