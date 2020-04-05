@@ -5,7 +5,7 @@ module.exports = {
     prefixSelector({
       prefix: "[data-front-end-system]",
       transform(prefix, selector, prefixedSelector){
-        if (selector === 'html') {
+        if (selector === 'body') {
           return  `body${prefix}` ;
         } else {
           return prefixedSelector;
