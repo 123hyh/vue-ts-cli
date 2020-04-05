@@ -1,9 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+/* 打包体积可视化插件 */
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+/* 压缩 */
 const CompressionPlugin = require("compression-webpack-plugin");
+/* Css基础loader */
+const CSS_BASE_LOADER = () => ["style-loader", "css-loader", "postcss-loader"];
 const conf = {
   externals: {},
   module: {
@@ -34,28 +38,16 @@ const conf = {
       },
       {
         test: /.css$/,
-        use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
-        ],
+        use: CSS_BASE_LOADER,
       },
       {
         test: /\.s(a|c)ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [...CSS_BASE_LOADER(), "sass-loader"],
       },
       {
         test: /.less$/,
         use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
+          ...CSS_BASE_LOADER(),
           {
             loader: "less-loader",
             options: {
