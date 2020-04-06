@@ -1,5 +1,5 @@
 # 开始
-脚手架使用 [vue-tsx-support](https://www.npmjs.com/package/vue-tsx-support "vue-tsx-support") 对 VUE TSX [语法](https://github.com/vuejs/jsx "语法")
+脚手架使用 [vue-tsx-support](https://www.npmjs.com/package/vue-tsx-support "vue-tsx-support") 对 VUE TSX [语法](https://github.com/vuejs/jsx "语法")； [插件配置](https://www.cnblogs.com/vaynewang/p/10794128.html "插件配置")
 
     // vue-tsx-support 需要在 tsconfig.json 添加配置 
     {
