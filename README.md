@@ -52,8 +52,11 @@
     	})
 
 ------------
+### 2.3 typescriptjsx 语法 
+[参考]:[参考]
 
 
 
 
 [config/env/env.prod.js]: https://github.com/123hyh/vue-ts-cli/blob/master/config/env/env.prod.js
+[参考]:  https://github.com/vuejs/jsx
