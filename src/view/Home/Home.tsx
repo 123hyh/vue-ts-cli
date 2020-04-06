@@ -1,9 +1,11 @@
-import vue from "vue";
+
+import Vue from "vue";
 import { Test } from "@/components/Center.component/Test.component";
 import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
 import {mapGetters} from 'vuex'
-const Home = vue.extend({
+
+const Home = Vue.extend({
   
   computed:{
     ...mapGetters(['isLogin'])
@@ -15,15 +17,17 @@ const Home = vue.extend({
 
   name: "Home",
 
-  template: require("./Home.html"),
+  render(h){
+    return   <div>
+      <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
+      <Test > <div>slot</div> </Test>
+    </div> 
+  },
+
   async mounted(): Promise<any> {
     const d = await strongbox(() => UserInstance.getExchangerate());
   },
-
-  components: {
-    Test: Test()
-  },
-
+  
   methods: {
     handlerClick(): void {
       console.log(123);

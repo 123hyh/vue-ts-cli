@@ -2,7 +2,11 @@ import Vue from "vue";
 import { mapActions } from "vuex";
 import  './Login.scss'
 export default Vue.extend({
-  template: require("./Login.html"),
+  render(h){
+    return <div class="login">
+      <el-button onClick={this.handleLogin} >login</el-button>
+    </div>
+  },
   methods: {
     ...mapActions(["login"]),
     handleLogin(): void {

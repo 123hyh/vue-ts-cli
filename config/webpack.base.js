@@ -22,9 +22,15 @@ const conf = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+        }
+      },
+      {
         test: /\.tsx?$/,
         use: [
-          "babel-loader",
+          "babel-loader", 
           {
             loader: "ts-loader",
             options: { transpileOnly: true },
@@ -39,7 +45,7 @@ const conf = {
             } */
           },
         ],
-        include: [path.resolve(process.cwd(), "src")], // 指定检查的目录
+        // include: [path.resolve(process.cwd(), "src")], // 指定检查的目录
         /* options: {
           // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
           formatter: require("eslint-friendly-formatter") // 指定错误报告的格式规范
@@ -76,7 +82,7 @@ const conf = {
     extensions: [".js", ".ts", ".tsx"],
     alias: {
       "@": path.resolve(process.cwd(), "src"),
-      vue$: "vue/dist/vue.esm.js",
+      vue$: "vue/dist/vue.js",
       utils: path.resolve(process.cwd(), "src/utils/index.ts"),
     },
   },

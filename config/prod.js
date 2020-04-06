@@ -10,5 +10,4 @@ const PROD_CONFIG = {
   mode: "production",
   plugins: [new webpack.DefinePlugin(env)]
 };
-console.log();
 module.exports = merge(config, PROD_CONFIG);

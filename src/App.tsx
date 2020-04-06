@@ -1,4 +1,5 @@
 import vue from "vue";
+
 export const App = vue.extend({
   name: "App",
   render: (h: any) => (
@@ -7,3 +8,4 @@ export const App = vue.extend({
     </keep-alive>
   )
 });
+

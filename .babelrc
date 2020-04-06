@@ -1,13 +1,13 @@
 {
   "presets": [
-    "@vue/babel-preset-jsx",
     [
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
         "corejs": 3
       }
-    ]
+    ],
+    "@vue/babel-preset-jsx"
   ],
   "plugins": []
 }

@@ -3,7 +3,13 @@ import { Test } from "@/components/Center.component/Test.component";
 
 const User = vue.extend({
   name: "User",
-  template: require("./User.html"),
+  render(h){
+    return <div>
+      <el-input v-model={this.name} name="" v-foucs />
+      <Test />
+    </div>
+  
+  },
   directives: {
     foucs(el: any): void {
       const input: HTMLElement = [...el.children].find(
@@ -16,9 +22,7 @@ const User = vue.extend({
       }
     }
   },
-  components: {
-    TestComponent: Test()
-  },
+  
   data() {
     return {
       name: "2"

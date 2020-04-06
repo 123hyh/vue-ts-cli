@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server  --config  ./config/dev.js",
-    "build:prodution": "webpack  --config  ./config/prod.js",
+    "build": "webpack  --config  ./config/prod.js",
     "build:test": "set test=true && npm run build",
     "build:visual": "set buildvisual=true &&  set test=true && npm run build:test"
   },
@@ -22,6 +22,7 @@
     "@vue/babel-preset-jsx": "^1.1.2",
     "autoprefixer": "^9.7.5",
     "babel-loader": "^8.0.6",
+    "browserslist": "^4.11.1",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.2",

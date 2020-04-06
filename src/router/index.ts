@@ -2,16 +2,18 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import { routerHooks } from '@/router/hooks';
 import { ROUTES } from './permissions';
-Vue.use(VueRouter);
 
+import Home from '@/view/Home/Home'
+
+Vue.use(VueRouter); 
 type RouteComponent = Promise<any>;
 
 export const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: (): RouteComponent =>
-        import(/* webpackChunkName: "Home" */ '@/view/Home/Home')
+      component: Home //(): RouteComponent =>
+      // import(/* webpackChunkName: "Home" */ '@/view/Home/Home')
     },
     {
       path: '/login',

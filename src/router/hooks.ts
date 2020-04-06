@@ -17,4 +17,7 @@ export function routerHooks(router: VueRouter): void {
   router.afterEach(() => {
     progressBar.finish();
   });
+  router.onError ((x)=>{
+    console.log(x)
+  })
 }
