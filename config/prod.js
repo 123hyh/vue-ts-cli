@@ -1,3 +1,6 @@
+
+process.env.NODE_ENV = 'production'
+
 const merge = require("webpack-merge");
 const webpack = require("webpack");
 const env = require("./env/env.prod");
