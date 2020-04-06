@@ -1,11 +1,10 @@
-
-import Vue from "vue";
 import { Test } from "@/components/Center.component/Test.component";
 import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
 import {mapGetters} from 'vuex'
+import * as tsx from "vue-tsx-support";
 
-const Home = Vue.extend({
+const Home = tsx.componentFactory.create({
   
   computed:{
     ...mapGetters(['isLogin'])
@@ -18,10 +17,10 @@ const Home = Vue.extend({
   name: "Home",
 
   render(){
-    return   <div>
+    return   (<div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
-      <Test > <div>slot</div> </Test>
-    </div> 
+      <Test  dataTitle='测试1'> <div>测试 slot</div> </Test>
+    </div> )
   },
 
   async mounted(): Promise<any> {

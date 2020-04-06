@@ -1,4 +1,15 @@
 # 开始
+脚手架使用 [vue-tsx-support](https://www.npmjs.com/package/vue-tsx-support "vue-tsx-support") 对 VUE TSX [语法](https://github.com/vuejs/jsx "语法")
+
+    // vue-tsx-support 需要在 tsconfig.json 添加配置 
+    {
+    	"compilerOptions":{...},
+    	"include": [
+    		"node_modules/vue-tsx-support/enable-check.d.ts", 
+    		"src/**/*.ts",
+    		"src/**/*.tsx",
+    	]
+    }
 # 1. CLI 命令
 -   开发环境：
 
@@ -33,27 +44,56 @@
 ------------
 
 - 
-### 	2.2 创建组件
-使用 Vue.extend 方法 保证正常使用typescript 对 vue 提示功能：
+### 2.2 创建组件 
 
 
-      Vue.extend({
-    	  data: () => ({
-          test: 1
-        }),
-    	  render() {
-					return <div onClick={() => this.handleClick()}>{this.test}</div>
-				}, 
-    	  methods: {
-					handleClick(){}
-				},
-    	  props: {},
-    	  computed: {}
-    	})
+    import * as tsx from "vue-tsx-support"; // 必须使用 这个插件创建组件
+	
+    export const Test = tsx.component({
+      
+      name: "Test",
+    
+      render(){
+    
+        const { default: defaults } = this.$slots;
+    
+        return <div class="active" onClick = {
+          (e: MouseEvent): any => this.handlerClick(e)}>
+          <h2>{this.dataTitle}</h2>
+          <ul>
+            {
+              [1,2,3,4].map(item => (<li onClick = {(e: MouseEvent): any=> this.handlerClick(e)} >{ item }</li>))
+            }
+          </ul>
+          {
+            defaults
+          }
+        </div>
+        
+      },
+      methods: {
+        handlerClick(e: MouseEvent): void {
+          console.log(e)
+          e.stopPropagation();
+          this.$emit("handlerClick");
+        }
+      },
+      data() {
+        return { x: 2 };
+      },
+      computed: {
+        calc(): number {
+          return 123;
+        }
+      },
+      props: {
+        dataTitle: {
+          type: String,
+          required: true
+        }
+      }
+    })
 
-------------
-### 2.3 typescriptjsx 语法 
-[参考]:[参考]
 
 
 

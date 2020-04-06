@@ -1,15 +1,18 @@
-import vue from "vue";
+import * as tsx from "vue-tsx-support";
+
 import "./Test.component.scss";
 
-export const Test = vue.extend({
+export const Test = tsx.component({
+  
   name: "Test",
 
   render(){
 
     const { default: defaults } = this.$slots;
 
-    return <div class="active" onclick = {
+    return <div class="active" onClick = {
       (e: MouseEvent): any => this.handlerClick(e)}>
+      <h2>{this.dataTitle}</h2>
       <ul>
         {
           [1,2,3,4].map(item => (<li onClick = {(e: MouseEvent): any=> this.handlerClick(e)} >{ item }</li>))
@@ -37,8 +40,10 @@ export const Test = vue.extend({
     }
   },
   props: {
-    name: {
-      type: String
+    dataTitle: {
+      type: String,
+      required: true
     }
   }
-});
+  /* snip */
+})
