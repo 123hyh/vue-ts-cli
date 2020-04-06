@@ -1,8 +1,8 @@
-import * as tsx from "vue-tsx-support";
+import {component} from "vue-tsx-support";
 
 import "./Test.component.scss";
 
-export const Test = tsx.component({
+export const Test = component({
   
   name: "Test",
 

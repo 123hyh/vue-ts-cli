@@ -1,11 +1,10 @@
-import vue from "vue";
-
-export const App = vue.extend({
+import {component} from 'vue-tsx-support'
+export const App = component({
   name: "App",
-  render: (h: any) => (
+  render(){ return (
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-  )
+  )}
 });
 

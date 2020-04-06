@@ -1,10 +1,10 @@
+import { component }from "vue-tsx-support";
 import { Test } from "@/components/Center.component/Test.component";
 import { UserInstance } from "@/service/";
 import { strongbox } from "utils";
 import {mapGetters} from 'vuex'
-import * as tsx from "vue-tsx-support";
 
-const Home = tsx.componentFactory.create({
+const Home = component({
   
   computed:{
     ...mapGetters(['isLogin'])
@@ -41,7 +41,7 @@ const Home = tsx.componentFactory.create({
   }
 });
 
-const m: any = module;
+const m: any = module; 
 
 if (m.hot) {
   m.hot.accept();

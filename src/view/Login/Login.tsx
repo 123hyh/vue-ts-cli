@@ -1,7 +1,8 @@
-import Vue from "vue";
+import { component }from "vue-tsx-support";
+
 import { mapActions } from "vuex";
 import  './Login.scss'
-export default Vue.extend({
+export default component({
   render(){
     return <div class="login">
       <el-button onClick={this.handleLogin} >login</el-button>

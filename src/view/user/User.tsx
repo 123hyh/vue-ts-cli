@@ -1,14 +1,14 @@
-import vue from "vue";
+import {component} from 'vue-tsx-support'
 import { Test } from "@/components/Center.component/Test.component";
 
-const User = vue.extend({
+const User = component({
   name: "User",
   render(){
     return <div>
       <el-input v-model={this.name} name="" v-foucs />
-      <Test />
+      <Test dataTitle='测试2'/>
     </div>
-  
+    
   },
   directives: {
     foucs(el: any): void {
