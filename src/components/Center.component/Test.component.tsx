@@ -4,8 +4,8 @@ import "./Test.component.scss";
 export const Test = vue.extend({
   name: "Test",
 
-  render(h){
-    
+  render(){
+
     const { default: defaults } = this.$slots;
 
     return <div class="active" onclick = {

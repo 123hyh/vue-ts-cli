@@ -17,7 +17,7 @@ const Home = Vue.extend({
 
   name: "Home",
 
-  render(h){
+  render(){
     return   <div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
       <Test > <div>slot</div> </Test>

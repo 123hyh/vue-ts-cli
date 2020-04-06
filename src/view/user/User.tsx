@@ -3,7 +3,7 @@ import { Test } from "@/components/Center.component/Test.component";
 
 const User = vue.extend({
   name: "User",
-  render(h){
+  render(){
     return <div>
       <el-input v-model={this.name} name="" v-foucs />
       <Test />

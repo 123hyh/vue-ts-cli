@@ -27,9 +27,9 @@
 ###    2.1 目录结构：
 
     	| - components
-    	|  | - User.component
-    	|	 |  | - User.component.tsx
-    	|  |  | - User.component.scss
+    	| - | - User.component
+    	| - | - | - User.component.tsx
+    	| - | - | - User.component.scss
 ------------
 
 - 
@@ -38,13 +38,15 @@
 
 
       Vue.extend({
-    	  data: () =>({
+    	  data: () => ({
           test: 1
         }),
-    	  render(h){
-					return <div>Test</div>
+    	  render() {
+					return <div onClick={() => this.handleClick()}>{this.test}</div>
 				}, 
-    	  methods: {},
+    	  methods: {
+					handleClick(){}
+				},
     	  props: {},
     	  computed: {}
     	})
