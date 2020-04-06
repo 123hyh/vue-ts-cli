@@ -28,7 +28,6 @@
 
     	|- components
     	|  |- User.component
-    	|  |- User.component.html
     	|  |- User.component.ts
     	|  |- User.component.scss
 ------------
@@ -36,14 +35,15 @@
 - 
 ### 	2.2 创建组件
 使用 Vue.extend 方法 保证正常使用typescript 对 vue 提示功能：
-template 必须使用 require函数导入html模板；
-或者使用 tsx脚本的render方法创建模板（ 建议使用html模板 ）
+
 
       Vue.extend({
     	  data: () =>({
           test: 1
         }),
-    	  template: require('./User.componenthtml.html'), 
+    	  render(h){
+					return <div>Test</div>
+				}, 
     	  methods: {},
     	  props: {},
     	  computed: {}
