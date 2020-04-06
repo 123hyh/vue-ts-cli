@@ -26,10 +26,10 @@
 - 
 ###    2.1 目录结构：
 
-    	|- components
-    	|  |- User.component
-    	|  |- User.component.ts
-    	|  |- User.component.scss
+    	| - components
+    	|  | - User.component
+    	|	 |  | - User.component.tsx
+    	|  |  | - User.component.scss
 ------------
 
 - 
