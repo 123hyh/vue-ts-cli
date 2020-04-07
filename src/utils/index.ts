@@ -6,7 +6,7 @@ import { AxiosResponse } from 'axios';
  */
 
 
-export async function strongbox(handlerCb: () => any): Promise<any> {
+export async function strongbox (handlerCb: () => any): Promise<any> {
   try {
     const data = await handlerCb();
     return data;
