@@ -30,7 +30,7 @@ export function addRouter  (): any {
 
 // 页面加载时判断 登录状态，是就动态添加 routes
 const isLogin = !!JSON.parse(
-  sessionStorage.getItem('store') ?? JSON.stringify({user:{token: 0}})
+  sessionStorage.getItem('store') ?? JSON.stringify({user: {token: 0}})
 ).user.token;
 isLogin && addRouter();
 

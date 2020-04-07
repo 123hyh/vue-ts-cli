@@ -4,7 +4,7 @@ const progressBar = new QProgress();
 import VueRouter from 'vue-router';
 import { store } from '@/store';
 const WHITE_LIST = ['/login', '/'];
-export function routerHooks(router: VueRouter): void {
+export function routerHooks (router: VueRouter): void {
   router.beforeEach((to: any, from, next) => {
     const hasCurrent = WHITE_LIST.some(item => item === to.path);
     if (!store.getters.isLogin && !hasCurrent) {

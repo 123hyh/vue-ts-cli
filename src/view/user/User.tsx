@@ -1,9 +1,9 @@
 import {component} from 'vue-tsx-support'
-import { Test } from "@/components/Center.component/Test.component";
+import { Test } from '@/components/Center.component/Test.component';
 
 const User = component({
-  name: "User",
-  render(){
+  name: 'User',
+  render () {
     return <div>
       <el-input v-model={this.name} name="" v-foucs />
       <Test dataTitle='测试2'/>
@@ -11,9 +11,9 @@ const User = component({
     
   },
   directives: {
-    foucs(el: any): void {
+    foucs (el: any): void {
       const input: HTMLElement = [...el.children].find(
-        (item: HTMLElement) => item.nodeName === "INPUT"
+        (item: HTMLElement) => item.nodeName === 'INPUT'
       );
       if (input) {
         setTimeout(() => {
@@ -23,9 +23,9 @@ const User = component({
     }
   },
   
-  data() {
+  data () {
     return {
-      name: "2"
+      name: '2'
     };
   }
 });
