@@ -3,7 +3,6 @@ import { Test } from '@/components/Center.component/Test.component';
 import { UserInstance } from '@/service/';
 import { strongbox } from 'utils';
 import {mapGetters} from 'vuex'
-
 const Home = component({
   
   computed: {

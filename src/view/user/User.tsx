@@ -6,7 +6,7 @@ const User = component({
   render () {
     return <div>
       <el-input v-model={this.name} name="" v-foucs />
-      <Test dataTitle='测试2'/>
+      <Test dataTitle='测试'/>
     </div>
     
   },
