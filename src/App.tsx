@@ -1,4 +1,5 @@
 import {component} from 'vue-tsx-support'
+
 export const App = component({
   name: "App",
   render(){ return (
