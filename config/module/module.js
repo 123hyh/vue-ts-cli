@@ -16,11 +16,11 @@ const moduleRules = [
     use: [
       "babel-loader", 
       {
-        loader: path.resolve(__dirname, "../loaders/hot.js"),
-      },
-      {
         loader: "ts-loader",
         options: { transpileOnly: true },
+      },
+      {
+        loader: path.resolve(__dirname, "../loaders/hot.js"),
       },
       {
         loader: "eslint-loader",

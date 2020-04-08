@@ -1,10 +1,10 @@
 
 const hash = require('hash-sum');
-
+const isDev = process.env.NODE_ENV !== 'production';
 module.exports = function(source) {
   // 对 tsx 资源应用一些转换……
   let { request, resourcePath } = this;
-  if(/\.tsx$/.test(resourcePath)){
+  if(/\.tsx$/.test(resourcePath) && isDev){
     const id = hash(request);
 
     let path = resourcePath.split(/\\/);

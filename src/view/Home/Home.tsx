@@ -1,7 +1,5 @@
 import { component }from 'vue-tsx-support';
 import { Test } from '@/components/Center.component/Test.component';
-import { UserInstance } from '@/service/';
-import { strongbox } from 'utils';
 import {mapGetters} from 'vuex'
 
 const Home = component({
@@ -23,9 +21,6 @@ const Home = component({
     </div>)
   },
 
-  async mounted (): Promise<any> {
-    const d = await strongbox(() => UserInstance.getExchangerate());
-  },
   
   methods: {
     handlerClick (): void {
