@@ -5,7 +5,7 @@ import { strongbox } from 'utils';
 import {mapGetters} from 'vuex'
 
 const Home = component({
-  
+
   computed: {
     ...mapGetters(['isLogin'])
   },
@@ -19,7 +19,7 @@ const Home = component({
   render () {
     return   (<div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
-      <Test  dataTitle='测试1'> <div>测试 slot</div> </Test>
+      <Test  dataTitle='测试2'> <div>测试 slot</div> </Test>
     </div>)
   },
 
@@ -40,11 +40,5 @@ const Home = component({
     }
   }
 });
-/* 
-const m: any = module; 
 
-if (m.hot) {
-  m.hot.accept();
-  console.log('更新了···');
-} */
 export default Home;

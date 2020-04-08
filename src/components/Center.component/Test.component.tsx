@@ -5,7 +5,7 @@ import './Test.component.scss';
 export const Test = component({
   
   name: 'Test',
-
+ 
   render () {
 
     const { default: defaultSlot } = this.$slots;

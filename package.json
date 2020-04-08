@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server  --config  ./config/dev.js",
     "build": "webpack  --config  ./config/prod.js",
     "build:test": "set test=true && npm run build",
-    "build:visual": "set buildvisual=true &&  set test=true && npm run build:test"
+    "build:visual": "set buildvisual=true &&  set test=true && npm run build:test",
+    "install": "npm install"
   },
   "keywords": [],
   "author": "",
