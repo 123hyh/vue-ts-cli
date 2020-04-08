@@ -1,16 +1,22 @@
-import { component } from 'vue-tsx-support';
+import { componentFactoryOf } from 'vue-tsx-support';
 
-import './Test.component.scss';
+import $style from './Test.module.scss'
 
-export const Test = component({
+interface Event{
+  onHandlerClick: () => any;
+}
+interface ScopedSlots{
+  default: number; 
+}
+export const Test = componentFactoryOf<Event, ScopedSlots>().create({
   
   name: 'Test',
- 
+
   render () {
 
-    const { default: defaultSlot } = this.$slots;
+    const { default: defaultSlot = (): any => null } = this.$scopedSlots;
 
-    return <div class="active" onClick = {
+    return <div class={$style.active} onClick = {
       (e: MouseEvent): any => this.handlerClick(e)}>
       <h2>{this.dataTitle}</h2>
       <ul>
@@ -23,7 +29,7 @@ export const Test = component({
         }
       </ul>
       {
-        defaultSlot
+        defaultSlot(this.x)
       }
     </div>
     
@@ -36,7 +42,7 @@ export const Test = component({
     }
   },
   data () {
-    return { x: 2 };
+    return { x: 3 };
   },
   computed: {
     calc (): number {
@@ -47,6 +53,6 @@ export const Test = component({
     dataTitle: {
       type: String,
       required: true
-    }
+    },
   }
 })

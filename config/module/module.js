@@ -1,9 +1,9 @@
 const path = require('path')
 /* Css基础loader */
-const CSS_BASE_LOADER_MIXIN = loader => {
+const CSS_BASE_LOADER_MIXIN = (loader,setModules = false) => {
   const BASE = [
     "style-loader",
-    "css-loader", 
+    `css-loader?modules=${setModules}`, 
     "postcss-loader",
   ];
   return {
@@ -40,8 +40,9 @@ const moduleRules = [
     ...CSS_BASE_LOADER_MIXIN(),
   },
   {
+    /* 配置 sass模块化时 需要 改写 css-loader&modules */
     test: /\.scss$/,
-    ...CSS_BASE_LOADER_MIXIN('sass-loader')
+    ...CSS_BASE_LOADER_MIXIN('sass-loader', true)
   },
   // 图片
   {

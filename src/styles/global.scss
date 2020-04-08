@@ -1,2 +1,7 @@
-/* 充值样式 */
-@import '~normalize.css'
+/* 重置样式 */
+@import '~normalize.css';
+
+/* 全局样式控制写在 global 中 */
+:global {
+  
+} 

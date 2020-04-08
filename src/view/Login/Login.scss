@@ -1,8 +1,6 @@
 @import '~@/styles/mixin.scss';
-.login{
-  .el-button {
+.elButton {
   @include flex-layout();
   width: 100%;
   height: 100px;
-}
 }

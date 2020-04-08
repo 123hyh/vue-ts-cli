@@ -17,12 +17,23 @@ const Home = component({
   render () {
     return   (<div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
-      <Test  dataTitle='测试2'> <div>测试 slot</div> </Test>
+      <Test
+        onHandlerClick={this.handlerClick}
+        dataTitle='测试2'
+        scopedSlots={{ 
+          default: (x): JSX.Element => (<div onClick={this.handlerSlotClick}>测试 slot{x}</div>)
+        }}
+      > 
+      </Test>
     </div>)
   },
 
   
   methods: {
+    handlerSlotClick (e: Event): void {
+      e.stopPropagation()
+      console.log('testSlot')
+    },
     handlerClick (): void {
       console.log(123);
     },
