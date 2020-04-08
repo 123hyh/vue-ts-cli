@@ -49,5 +49,4 @@ export const Test = component({
       required: true
     }
   }
-  /* snip */
 })

@@ -40,11 +40,11 @@ const Home = component({
     }
   }
 });
-
+/* 
 const m: any = module; 
 
 if (m.hot) {
   m.hot.accept();
   console.log('更新了···');
-}
+} */
 export default Home;
