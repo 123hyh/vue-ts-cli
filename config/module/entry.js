@@ -1,1 +1,6 @@
-module.exports = { index: "./src/index.js" };
+const { generatorPages } = require('../utils');
+
+module.exports = {
+  index: './src/index.tsx',
+  ...generatorPages('js').pagesEntrys,
+};

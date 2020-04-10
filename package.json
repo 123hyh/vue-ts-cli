@@ -5,16 +5,19 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "server": "node scripts/server",
-    "build": "node scripts/build",
+    "server": "node ./scripts/server.js",
+    "build": "node ./scripts/build",
     "build:test": "set test=true && npm run build",
     "build:visual": "set buildvisual=true  && npm run build:test",
     "install": "npm install"
   },
-  "keywords": ["vue-tsx", "vue-tsx-cli"],
+  "keywords": [
+    "vue-tsx",
+    "vue-tsx-cli"
+  ],
   "bugs": {
     "url": "https://github.com/123hyh/vue-ts-cli/issues",
-    "email" : "310515005@qq.com"
+    "email": "310515005@qq.com"
   },
   "author": "310515005@qq.com",
   "license": "ISC",
