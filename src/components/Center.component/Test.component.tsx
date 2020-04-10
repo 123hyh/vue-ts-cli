@@ -2,13 +2,14 @@ import { componentFactoryOf } from 'vue-tsx-support';
 
 import $style from './Test.module.scss'
 
-interface Event{
+interface Events{
+  /* 点击事件 */
   onHandlerClick: () => any;
 }
 interface ScopedSlots{
   default: number; 
 }
-export const Test = componentFactoryOf<Event, ScopedSlots>().create({
+export const Test = componentFactoryOf<Events, ScopedSlots>().create({
   
   name: 'Test',
 
@@ -50,6 +51,7 @@ export const Test = componentFactoryOf<Event, ScopedSlots>().create({
     }
   },
   props: {
+    /* 自定义属性 */
     dataTitle: {
       type: String,
       required: true
