@@ -15,23 +15,7 @@ const devConfig = {
   entry,
   output: output("development"),
   devtool: "source-map",
-  devServer: {
-    contentBase: path.resolve(process.cwd(), "dist"),
-    hot: true,
-    quiet: true,
-    inline:true,
-    overlay: {
-      errors: true,
-      warnings: false
-    },
-    proxy: {
-      "/apis": {
-        target: "http://47.106.230.157:8080/apis",
-        pathRewrite: { "^/apis": "" },
-        changeOrigin: true
-      }
-    }
-  },
+
   plugins: [
     new webpack.DefinePlugin(require("./env/env.dev")),
     // 清空命令行信息

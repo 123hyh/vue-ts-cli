@@ -5,10 +5,10 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server  --config  ./config/dev.js",
-    "build": "webpack  --config  ./config/prod.js",
+    "server": "node scripts/server",
+    "build": "node scripts/build",
     "build:test": "set test=true && npm run build",
-    "build:visual": "set buildvisual=true &&  set test=true && npm run build:test",
+    "build:visual": "set buildvisual=true  && npm run build:test",
     "install": "npm install"
   },
   "keywords": ["vue-tsx", "vue-tsx-cli"],
