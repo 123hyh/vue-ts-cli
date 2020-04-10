@@ -20,7 +20,7 @@ const devConfig = (PORT) => ({
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: [
-          `Your application is running here:  http://localhost:${PORT}`,
+          `您的应用程序正在这里运行:  http://localhost:${PORT}`,
         ],
       },
       clearConsole: true,

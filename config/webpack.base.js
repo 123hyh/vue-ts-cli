@@ -1,5 +1,5 @@
 const path = require('path');
-const yargs = require('yargs')
+const yargs = require('yargs');
 const { generatorPages } = require('./utils');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -26,7 +26,7 @@ const conf = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-
+    
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
