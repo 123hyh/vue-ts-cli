@@ -1,4 +1,5 @@
 const path = require('path');
+const yargs = require('yargs')
 const { generatorPages } = require('./utils');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -43,7 +44,7 @@ const conf = {
 };
 
 // 可视化打包文件插件
-if (process.env.buildvisual) {
+if (yargs.argv.buildvisual) {
   conf.plugins.push(new BundleAnalyzerPlugin());
 }
 module.exports = conf;

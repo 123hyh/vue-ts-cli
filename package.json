@@ -7,8 +7,8 @@
   "scripts": {
     "server": "node ./scripts/server.js",
     "build": "node ./scripts/build",
-    "build:test": "set test=true && npm run build",
-    "build:visual": "set buildvisual=true  && npm run build:test",
+    "build:test": "node ./scripts/build --test",
+    "build:visual": "node ./scripts/build --test --buildvisual",
     "install": "npm install"
   },
   "keywords": [
@@ -58,7 +58,8 @@
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "yargs": "^15.3.1"
   },
   "dependencies": {
     "axios": "^0.19.2",
