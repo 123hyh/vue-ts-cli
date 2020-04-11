@@ -15,7 +15,7 @@ const Home = component({
   name: 'Home',
 
   render () {
-    return   (<div>
+    return (<div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
       <Test
         onHandlerClick={this.handlerClick}
