@@ -1,6 +1,6 @@
 import {component} from 'vue-tsx-support'
 import { Test } from '@/components/Center.component/Test.component';
-
+import './User.module.scss'
 const User = component({
   name: 'User',
   render () {

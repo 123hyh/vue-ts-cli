@@ -1,8 +1,11 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isProd = process.env.NODE_ENV === 'production'
 /* Css基础loader */
 const CSS_BASE_LOADER_MIXIN = (loader,setModules = false) => {
   const BASE = [
-    "style-loader",
+    /* 生存环境 css分离 */
+    isProd ? MiniCssExtractPlugin.loader : "style-loader",
     `css-loader?modules=${setModules}`, 
     "postcss-loader",
   ];
