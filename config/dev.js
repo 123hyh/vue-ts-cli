@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'development';
-
 const webpack = require('webpack');
 const config = require('./webpack.base');
 const merge = require('webpack-merge');
@@ -19,9 +17,7 @@ const devConfig = (PORT) => ({
     // 清空命令行信息
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [
-          `您的应用程序正在这里运行:  http://localhost:${PORT}`,
-        ],
+        messages: [`您的应用程序正在这里运行:  http://localhost:${PORT}`],
       },
       clearConsole: true,
     }),

@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 /* 打包体积可视化插件 */
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
+const chalk = require('chalk');
 /* 压缩 */
 const CompressionPlugin = require('compression-webpack-plugin');
 
@@ -26,7 +27,7 @@ const conf = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
@@ -48,3 +49,26 @@ if (yargs.argv.buildvisual) {
   conf.plugins.push(new BundleAnalyzerPlugin());
 }
 module.exports = conf;
+/* 控制台样式 */
+{
+  const { test, production, development, buildvisual } = yargs.argv;
+  const green = chalk.keyword('green');
+  const temp = (mode) => `
+|-------------------------------------------------------------------------------|
+|                                                                               |
+|                                                                               |
+|                           正在构建${mode}环境${
+    buildvisual ? '(体积可视化)' : ''
+  }                                    |
+|                                                                               |
+|                                                                               |
+|-------------------------------------------------------------------------------|_ _ _
+`;
+  if (test) {
+    console.log(green(temp('测试')));
+  } else if (production) {
+    console.log(green(temp('生产')));
+  } else if (development) {
+    console.log(green(temp('开发')));
+  }
+}

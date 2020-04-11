@@ -5,10 +5,10 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./scripts/server.js",
-    "build:production": "node ./scripts/build",
-    "build:test": "node ./scripts/build --test",
-    "build:visual": "node ./scripts/build --test --buildvisual"
+    "start": "node ./scripts/server.js --development",
+    "build:production": "node ./scripts/build --production",
+    "build:test": "node ./scripts/build --test --production",
+    "build:visual": "node ./scripts/build --test --buildvisual --production"
   },
   "keywords": [
     "vue-tsx",
@@ -30,6 +30,7 @@
     "autoprefixer": "^9.7.5",
     "babel-loader": "^8.0.6",
     "browserslist": "^4.11.1",
+    "chalk": "^4.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.2",
