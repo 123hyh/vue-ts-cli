@@ -5,11 +5,10 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "server": "node ./scripts/server.js",
-    "build": "node ./scripts/build",
+    "start": "node ./scripts/server.js",
+    "build:production": "node ./scripts/build",
     "build:test": "node ./scripts/build --test",
-    "build:visual": "node ./scripts/build --test --buildvisual",
-    "install": "npm install"
+    "build:visual": "node ./scripts/build --test --buildvisual"
   },
   "keywords": [
     "vue-tsx",
