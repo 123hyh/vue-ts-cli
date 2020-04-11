@@ -1,5 +1,6 @@
-const hash = require("hash-sum");
-const isDev = process.env.NODE_ENV !== "production";
+const hash = require('hash-sum');
+const yargs = require('yargs');
+const { development: isDev } = yargs.argv;
 module.exports = function (source) {
   // 对 tsx 资源应用一些转换……
   let { request, resourcePath } = this;
@@ -7,7 +8,7 @@ module.exports = function (source) {
     const id = hash(request);
 
     let path = resourcePath.split(/\\/);
-    path = path.join("/");
+    path = path.join('/');
     // path = `./${path[path.length - 1]}`;
 
     /* 添加导入文件和导入文件 */

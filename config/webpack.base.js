@@ -10,12 +10,14 @@ const chalk = require('chalk');
 /* 压缩 */
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const { moduleRules } = require('./module/module');
+const outputOptions = require('./webpack.options/output');
+const { rules, plugins: rulesPlugins } = require('./webpack.options/module');
 
 const conf = {
+  output: outputOptions,
   externals: {},
   module: {
-    rules: moduleRules,
+    rules: rules,
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
@@ -33,7 +35,7 @@ const conf = {
       chunks: ['index'],
       template: path.resolve(process.cwd(), 'public/index.html'),
     }),
-
+    ...rulesPlugins,
     ...generatorPages().pagesPlugins,
 
     new CompressionPlugin({

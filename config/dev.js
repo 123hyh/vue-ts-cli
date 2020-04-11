@@ -1,15 +1,13 @@
 const webpack = require('webpack');
 const config = require('./webpack.base');
 const merge = require('webpack-merge');
-const entry = require('./module/entry');
-const output = require('./module/output');
+const entry = require('./webpack.options/entry');
 
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const devConfig = (PORT) => ({
   mode: 'development',
   entry,
-  output: output('development'),
   devtool: 'source-map',
 
   plugins: [
