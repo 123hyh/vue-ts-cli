@@ -21,7 +21,6 @@ class Server {
       },
     };
     this.handlerHttp().then((res) => {
-      console.log(this.options);
       this.bootstrapDevService();
     });
   }

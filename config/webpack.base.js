@@ -33,8 +33,8 @@ const conf = {
       chunks: ['index'],
       template: path.resolve(process.cwd(), 'public/index.html'),
     }),
-    ...rulesPlugins,
     ...generatorPages().pagesPlugins,
+    ...rulesPlugins,
   ],
 };
 
