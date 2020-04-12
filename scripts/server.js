@@ -1,5 +1,6 @@
 const net = require('net');
 const path = require('path');
+const fs = require('fs');
 const Webpack = require('webpack');
 const webpackConfig = require('../config/development.js');
 const WebpackDevServer = require('webpack-dev-server');
@@ -7,21 +8,6 @@ const WebpackDevServer = require('webpack-dev-server');
 class Server {
   constructor() {
     this.options = {
-      before(app /* express */) {
-        /* 伪造请求头，避免后端校验 */
-        app.all('*', function (req, res, next) {
-          const headers = {
-            /* referer: 'http://s10001.ztyshop.vip',
-            origin: 'http://s10001.ztyshop.vip',
-            host: 'api.ztyshop.vip',
-            'Origin-Name': 'home-index', */
-          };
-          /* 设置 express 请求头 */
-          req.headers = { ...req.headers, ...headers };
-
-          next();
-        });
-      },
       contentBase: path.resolve(process.cwd(), 'dist'),
       hot: true,
       quiet: true,
@@ -33,15 +19,11 @@ class Server {
         errors: true,
         warnings: false,
       },
-      proxy: {
-        '/apis': {
-          target: 'http://api.ztyshop.vip/api1',
-          pathRewrite: { '^/apis': '' },
-          changeOrigin: true,
-        },
-      },
     };
-    this.bootstrapDevService();
+    this.handlerHttp().then((res) => {
+      console.log(this.options);
+      this.bootstrapDevService();
+    });
   }
   /* 启动程序 */
   bootstrapDevService() {
@@ -81,6 +63,20 @@ class Server {
         // 端口已经被使用
         this.selectorStartPort((port += 1));
       }
+    });
+  }
+  /* 处理 http 请求选项 */
+  handlerHttp() {
+    return new Promise((resolve) => {
+      const url = path.resolve(process.cwd(), 'http.config.js');
+      fs.stat(url, (err, stats) => {
+        if (!err && stats.isFile()) {
+          const { proxy = {}, requestBefore = () => {} } = require(url);
+          this.options.proxy = proxy;
+          this.options.before = requestBefore;
+        }
+        return resolve(true);
+      });
     });
   }
 }
