@@ -11,10 +11,10 @@ class Server {
         /* 伪造请求头，避免后端校验 */
         app.all('*', function (req, res, next) {
           const headers = {
-            referer: 'http://s10001.ztyshop.vip',
+            /* referer: 'http://s10001.ztyshop.vip',
             origin: 'http://s10001.ztyshop.vip',
             host: 'api.ztyshop.vip',
-            'Origin-Name': 'home-index',
+            'Origin-Name': 'home-index', */
           };
           /* 设置 express 请求头 */
           req.headers = { ...req.headers, ...headers };
