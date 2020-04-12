@@ -7,8 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 const chalk = require('chalk');
-/* 压缩 */
-const CompressionPlugin = require('compression-webpack-plugin');
 
 const outputOptions = require('./webpack.options/output');
 const { rules, plugins: rulesPlugins } = require('./webpack.options/module');
@@ -37,12 +35,6 @@ const conf = {
     }),
     ...rulesPlugins,
     ...generatorPages().pagesPlugins,
-
-    new CompressionPlugin({
-      test: /\.(js|css|html|svg|webp|png)$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
   ],
 };
 

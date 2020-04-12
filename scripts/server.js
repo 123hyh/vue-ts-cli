@@ -1,15 +1,32 @@
 const net = require('net');
 const path = require('path');
 const Webpack = require('webpack');
-const webpackConfig = require('../config/dev.js');
+const webpackConfig = require('../config/development.js');
 const WebpackDevServer = require('webpack-dev-server');
 
 class Server {
   constructor() {
     this.options = {
+      before(app /* express */) {
+        /* 伪造请求头，避免后端校验 */
+        app.all('*', function (req, res, next) {
+          const headers = {
+            referer: 'http://s10001.ztyshop.vip',
+            origin: 'http://s10001.ztyshop.vip',
+            host: 'api.ztyshop.vip',
+            'Origin-Name': 'home-index',
+          };
+          /* 设置 express 请求头 */
+          req.headers = { ...req.headers, ...headers };
+
+          next();
+        });
+      },
       contentBase: path.resolve(process.cwd(), 'dist'),
       hot: true,
       quiet: true,
+      host: '0.0.0.0',
+      progress: true,
       clientLogLevel: 'none',
       inline: true,
       overlay: {
@@ -18,7 +35,7 @@ class Server {
       },
       proxy: {
         '/apis': {
-          target: 'http://47.106.230.157:8080/apis',
+          target: 'http://api.ztyshop.vip/api1',
           pathRewrite: { '^/apis': '' },
           changeOrigin: true,
         },

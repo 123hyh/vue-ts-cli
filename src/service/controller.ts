@@ -118,7 +118,9 @@ export function DELETE<T extends TController> (args = {}): Function {
 
 export class Controller {
   private static headers: TChoosable = {
-    'x-auth-token': '2c8b473c-8d7b-4fc2-a7df-443f504650a6'
+    Authorization: 'Bearer eyJ0eXAiOiJaWVRfSldUIiwiYWxnIjoiSFMyNTYifQ==.eyJzdWIiOiIxMDAwMSIsImF1ZCI6IjEwMDAxIiwiaXNzIjoi5rex5Zyz5biC5b+g5LmJ5aCC6L2m5Lia5pyN5Yqh5pyJ6ZmQ5YWs5Y+4IiwidXNlcl90b2tlbiI6IjBGQUE5QUY4NEM4OTNFMkM5MzNCREY5MjEyNUY0RDY0RkIyRjUyNkMzMTRGRUY4OTkxNUQyREI0NTRCOEYyQTgiLCJleHAiOiIxNTg2NjY4MTkzIiwiaWF0IjoiMTU4NjY2ODA3MyIsInVzZXJuYW1lIjoiMTY2MjA4MDE3MzQifQ==.NDQyOEM5NDAwN0M2ODFBNEU5NzVCQzUzOEVDQkI1RjdEQzQzMUU3QTZGNDU0M0FFMDg3NjU0NEFDRENBQ0U3NA=='
+    , /* 'x-auth-token': 'a9db6da9-1cb8-4f5b-a1ff-6efdcf891039' */
+    'X-User-Token': '0FAA9AF84C893E2C933BDF92125F4D64FB2F526C314FEF89915D2DB454B8F2A8'
   };
   /**
    *

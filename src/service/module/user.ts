@@ -1,7 +1,7 @@
 
-import { Controller, TResponse, POST, Path } from '../Controller';
+import { Controller, TResponse, POST, Path, GET } from '../Controller';
 
-@Path('/user')
+// @Path('')
 class User extends Controller {
   @POST({ responseType: 'blob' })
   @Path('/userInfo')
@@ -9,8 +9,8 @@ class User extends Controller {
     return data;
   }
 
-  @POST()
-  @Path('/todo/search/')
+  @GET()
+  @Path(/* '/todo/search/' */'/system/logininfo')
   getExchangerate (): any {
     return { pageIndex: 1, pageSize: 10, source: 'system' };
   }

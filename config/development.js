@@ -9,7 +9,6 @@ const devConfig = (PORT) => ({
   mode: 'development',
   entry,
   devtool: 'source-map',
-
   plugins: [
     new webpack.DefinePlugin(require('./env/env.dev')),
     // 清空命令行信息
@@ -19,7 +18,7 @@ const devConfig = (PORT) => ({
       },
       clearConsole: true,
     }),
-    // new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 });
