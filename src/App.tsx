@@ -5,10 +5,8 @@ export const App = component({
   render (): JSX.Element {
     return (
       <div id="app">
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
+        <router-view></router-view>
       </div>
-    );
+    )
   },
 });

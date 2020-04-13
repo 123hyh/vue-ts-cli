@@ -1,7 +1,9 @@
-import { componentFactoryOf } from 'vue-tsx-support';
+
+import component from 'vue-class-component';
+import * as tsx from 'vue-tsx-support';
 
 import $style from './Test.module.scss';
-import { UserInstance } from '@/service/index.ts';
+
 interface Events {
   /* 点击事件 */
   onHandlerClick: () => any;
@@ -9,13 +11,29 @@ interface Events {
 interface ScopedSlots {
   default: number;
 }
-export const Test = componentFactoryOf<Events, ScopedSlots>().create({
-  mounted () {
-    UserInstance.getExchangerate();
-  },
-  name: 'Test',
 
-  render () {
+@component({
+  name: 'Test',
+  props: {
+    dataTitle: {
+      type: String,
+      required: true
+    }
+  }
+})
+export class Test extends tsx.Component < {dataTitle: string}, Events, ScopedSlots> {
+  
+  readonly dataTitle!: string;
+  private x = 1;
+
+  public mounted (): void {
+    return 
+  }
+  public handlerClick (e: MouseEvent): void {
+    e.stopPropagation();
+    this.$emit('handlerClick');
+  }
+  public render (): JSX.Element {
     const { default: defaultSlot = (): any => null } = this.$scopedSlots;
 
     return (
@@ -34,27 +52,5 @@ export const Test = componentFactoryOf<Events, ScopedSlots>().create({
         {defaultSlot(this.x)}
       </div>
     );
-  },
-  methods: {
-    handlerClick (e: MouseEvent): void {
-      console.log(e);
-      e.stopPropagation();
-      this.$emit('handlerClick');
-    },
-  },
-  data () {
-    return { x: 3 };
-  },
-  computed: {
-    calc (): number {
-      return 123;
-    },
-  },
-  props: {
-    /* 自定义属性 */
-    dataTitle: {
-      type: String,
-      required: true,
-    },
-  },
-});
+  }
+}
