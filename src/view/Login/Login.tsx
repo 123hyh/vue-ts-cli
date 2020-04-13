@@ -1,17 +1,25 @@
-import {component }from 'vue-tsx-support';
-import { mapActions } from 'vuex';
+import * as tsx from 'vue-tsx-support';
+import components from 'vue-class-component'
+import { Action } from 'vuex-class';
 import $styles from  './Login.scss'
-export default component({
+
+@components({name: 'Login'})
+export default class Login extends tsx.Component<any> {
+  /**
+   * vuex 登录时间
+   */
+  @Action('login') readonly login !: () => void
+
+  /**
+   * 调用登录
+   */
+  public  handleLogin (): void {
+    this.login();
+  }
   
-  render () {
+  public render (): JSX.Element {
     return <div >
       <el-button class={$styles.elButton} onClick={this.handleLogin} >login</el-button>
     </div>
-  },
-  methods: {
-    ...mapActions(['login']),
-    handleLogin (): void {
-      this.login();
-    }
   }
-});
+}

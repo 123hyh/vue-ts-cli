@@ -1,7 +1,6 @@
 
 import component from 'vue-class-component';
 import * as tsx from 'vue-tsx-support';
-
 import $style from './Test.module.scss';
 
 interface Events {
