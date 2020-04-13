@@ -32,6 +32,7 @@ module.exports.generatorPages = function generatorPages(type = 'html') {
         if (type === 'html' && htmlName) {
           pagesPlugins.push(
             new HtmlWebpackPlugin({
+              title: item,
               chunks: [item],
               filename: `${item}.html`,
               template: path.resolve(filePath, htmlName),

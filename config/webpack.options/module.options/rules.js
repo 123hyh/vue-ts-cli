@@ -68,13 +68,6 @@ class Rules {
           },
         ],
       },
-      // html模板
-      {
-        test: /.html$/,
-        use: {
-          loader: 'html-loader',
-        },
-      },
     ];
     /* 生产环境对js babel转换 */
     isProd &&
