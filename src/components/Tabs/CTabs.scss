@@ -1,0 +1,21 @@
+@mixin flex-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleList{
+  all:unset;
+  list-style: none;
+  @include flex-layout;
+  > li {
+    flex: 1;
+    font-size: 20px;
+    @include flex-layout;
+    &:active{
+      color: red
+    }
+    &:not(:last-child){
+      border-right: 1px solid;
+    }
+  }
+}

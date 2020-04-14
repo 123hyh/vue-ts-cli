@@ -26,6 +26,7 @@ export class Test extends tsx.Component < {dataTitle: string}, Events, ScopedSlo
   private x = 1;
 
   public mounted (): void {
+    console.log('挂摘了')
     return 
   }
   public handlerClick (e: MouseEvent): void {

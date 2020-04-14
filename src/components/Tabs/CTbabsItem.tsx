@@ -8,18 +8,18 @@ import {Component} from 'vue-tsx-support'
       required: true
     }
   },
-  inject: ['addItem']
 })
 export class CTabItem extends Component<{name: string}> {
-  public addItem!: (name: string) => void
   public name!: string;
+  public xx = 1
   public created (): void {
-    this.addItem(this.name)
+    console.log(123)
+    return
   }
-  public tabItem: Array<string> = [];
   public render (): JSX.Element {
-    return <div>
-      {this.name}
+    return <div onClick={(): any=> this.xx += 1}>
+      {this.$slots.default}
+      <div>{this.xx}</div>
     </div>
   }
   
