@@ -1,5 +1,7 @@
 import { component }from 'vue-tsx-support';
 import { Test } from '@/components/Center.component/Test.component';
+import {CTabs} from '@/components/Tabs/CTabs.tsx'
+import {CTabItem} from '@/components/Tabs/CTbabsItem'
 import {mapGetters} from 'vuex'
 
 const Home = component({
@@ -9,7 +11,7 @@ const Home = component({
   },
 
   data () {
-    return { xx: 2 };
+    return { xx: 2, bind: '123' };
   },
 
   name: 'Home',
@@ -25,6 +27,12 @@ const Home = component({
         }}
       > 
       </Test>
+      <hr/>
+      <CTabs v-model={this.bind}>
+        <CTabItem name='h'></CTabItem>
+        <CTabItem name='y'></CTabItem>
+        <CTabItem name='m'></CTabItem>
+      </CTabs>
     </div>)
   },
 
