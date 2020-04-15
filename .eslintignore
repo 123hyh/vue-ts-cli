@@ -5,4 +5,5 @@ config/*
 public/*
 scripts/*
 http.config.js
+dll.config.js
 postcss.config.js

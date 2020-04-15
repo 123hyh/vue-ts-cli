@@ -11,11 +11,12 @@
     flex: 1;
     font-size: 20px;
     @include flex-layout;
-    &:active{
-      color: red
-    }
     &:not(:last-child){
       border-right: 1px solid;
     }
   }
+}
+
+.activeTile{
+  color: #409EFF
 }

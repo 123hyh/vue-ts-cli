@@ -7,6 +7,10 @@ export const ROUTES: RouteConfig[] = [
       import(/* webpackChunkName: "User" */ '@/view/User/User')
   },
   {
+    path: '/ctabs',
+    component: (): any=> import(/* webpackChunkName: "CTabs" */'@/view/CTabs/Ctabs')
+  },
+  {
     path: '/*',
     component: (): any =>
       import(/* webpackChunkName: "NotFound" */ '@/view/NotFound/NotFound')

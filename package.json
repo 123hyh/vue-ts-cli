@@ -8,7 +8,9 @@
     "start": "node ./scripts/server.js --development",
     "build:production": "node ./scripts/build --production",
     "build:test": "node ./scripts/build --test --production",
-    "build:visual": "node ./scripts/build --test --buildvisual --production"
+    "build:visual": "node ./scripts/build --test --buildvisual --production",
+    "dll": "webpack --config ./config/dll.js",
+    "downloadRely": "npm install"
   },
   "keywords": [
     "vue-tsx",
