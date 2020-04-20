@@ -9,7 +9,9 @@ module.exports = {
         /* body 作为节点 */
         if (selector === 'body') {
           return `body${prefix}`;
-        } else {
+        } else if(selector === 'html'){
+          return selector
+        }else {
           return prefixedSelector;
         }
       },

@@ -1,8 +1,6 @@
 import { component }from 'vue-tsx-support';
 import { Test } from '@/components/Center.component/Test.component';
-import {CTabs} from '@/components/Tabs/CTabs.tsx'
-import {CTabItem} from '@/components/Tabs/CTbabsItem'
-import {CTabsSub} from '@/components/Tabs/CTabsSub'
+
 import {mapGetters} from 'vuex'
 
 const Home = component({
@@ -31,32 +29,7 @@ const Home = component({
       > 
       </Test>
       <hr/>
-      {/* 测试 tabs */}
-      <CTabs v-model={this.bind}>
-        <CTabItem name='h'>
-          <Test
-            onHandlerClick={ this.handlerClick }
-            dataTitle='测试1'
-            scopedSlots={{ 
-              default: (x): JSX.Element => (<div onClick={this.handlerSlotClick}>测试 slots{x}</div>)
-            }}
-          > 
-          </Test>
-        </CTabItem>
-        <CTabItem name='y'>
-          <Test
-            onHandlerClick={ this.handlerClick }
-            dataTitle='测试2'
-            scopedSlots={{ 
-              default: (x): JSX.Element => (<div onClick={this.handlerSlotClick}>测试 slots{x}</div>)
-            }}
-          > 
-          </Test>
-        </CTabItem>
-        <CTabItem name='m'>
-          <CTabsSub></CTabsSub>
-        </CTabItem>
-      </CTabs>
+      <router-view></router-view>
     </div>)
   },
 

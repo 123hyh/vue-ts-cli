@@ -12,8 +12,7 @@ export const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: Home //(): RouteComponent =>
-      // import(/* webpackChunkName: "Home" */ '@/view/Home/Home')
+      component: Home,
     },
     {
       path: '/login',
