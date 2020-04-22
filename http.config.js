@@ -5,6 +5,11 @@ module.exports = {
       pathRewrite: { '^/apis': '' },
       changeOrigin: true,
     },
+    '/test':{
+      target: 'http://47.106.230.157:8080/apis',
+      pathRewrite: { '^/test': '' },
+      changeOrigin: true,
+    }
   },
   /* 请求前的钩子 */
   requestBefore(app /* expressInstance */) {

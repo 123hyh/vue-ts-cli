@@ -1,7 +1,7 @@
 import { component }from 'vue-tsx-support';
 import { Test } from '@/components/Center.component/Test.component';
-
 import {mapGetters} from 'vuex'
+import{home} from '@/service/fetch/home'
 
 const Home = component({
 
@@ -14,8 +14,9 @@ const Home = component({
   },
 
   name: 'Home',
-  mounted () {
-    console.log(this)
+  async mounted () {
+    const d = await home.getData({})
+    debugger
   },
   render () {
     return (<div>
