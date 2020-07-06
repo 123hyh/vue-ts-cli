@@ -1,7 +1,7 @@
 import { component }from 'vue-tsx-support';
-import { Test } from '@/components/Center.component/Test.component';
 import {mapGetters} from 'vuex'
 import{home} from '@/service/fetch/home'
+import {TestSlot} from '@/components/Test/TestSlot'
 
 const Home = component({
 
@@ -21,15 +21,25 @@ const Home = component({
   render () {
     return (<div>
       <el-button onClick={(): any => this.handlerTemplate()}>123</el-button>
-      <Test
-        onHandlerClick={ this.handlerClick }
-        dataTitle='测试2'
-        scopedSlots={{ 
-          default: (x): JSX.Element => (<div onClick={this.handlerSlotClick}>测试 slots{x}</div>)
-        }}
-      > 
-      </Test>
       <hr/>
+      <TestSlot
+        currentNumber={2}
+        onHandleTestSlotClick={
+          (): void => {
+            debugger
+          }
+        }
+        scopedSlots={
+          {
+            footer (): JSX.Element {
+              return <div>测试TestSlot组件</div>
+            },
+            default (): JSX.Element {
+              return <div>slot-default</div>
+            }
+          }
+        }>
+      </TestSlot>
       <router-view></router-view>
     </div>)
   },
@@ -39,9 +49,6 @@ const Home = component({
     handlerSlotClick (e: Event): void {
       e.stopPropagation()
       console.log('testSlot')
-    },
-    handlerClick (): void {
-      console.log(123);
     },
     async handlerTemplate (): Promise<any> {
       const x = new Promise((resolve, reject) => {
